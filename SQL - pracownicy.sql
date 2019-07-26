@@ -17,7 +17,7 @@ SELECT * FROM pracownik ORDER BY nazwisko;
 SELECT * FROM pracownik WHERE stanowisko='DevOps';
 SELECT * FROM pracownik WHERE wiek>=30;
 UPDATE pracownik SET wyplata=wyplata*1.1 WHERE stanowisko='DevOps';
-DELETE FROM pracownik where wiek=(SELECT min(wiek));
+SELECT * FROM pracownik WHERE data_urodzenia < DATE_SUB(NOW(),INTERVAL 30 YEAR)
 DROP TABLE pracownik;
 CREATE TABLE stanowisko (id_stanowisko INT auto_increment PRIMARY KEY, 
 nazwa VARCHAR(50) NOT NULL,
